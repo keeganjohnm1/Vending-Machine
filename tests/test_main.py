@@ -32,10 +32,5 @@ class TestProducts(unittest.TestCase):
         expected_response = "THANKS"
         self.assertEqual(expected_response,actual_response)
 
-
-
-
-
-
 if __name__ == '__main__':
     unittest.main()
