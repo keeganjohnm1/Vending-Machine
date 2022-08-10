@@ -6,7 +6,7 @@ class Test(unittest.TestCase):
     # @mock.patch('coin_processing.coin_intake.users_current_count', return_value=1)
     def test_users_current_count(self):
         user_input = 1
-        user_count = coin_intake.users_current_count(user_input)
+        # user_count = coin_intake.users_current_count(user_input)
         expected_valid_count = 0
         expected_invalid_count = 0
         actual_valid_count = 0
