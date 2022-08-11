@@ -16,8 +16,8 @@ class TestProducts(unittest.TestCase):
     def test_product_values(self):
         get_coke_cost = main.product_cost("Cola")
         get_chip_cost = main.product_cost("Chips")
-        self.assertEqual(get_coke_cost, 0.50)
-        self.assertEqual(get_chip_cost, 0.75)
+        self.assertEqual(get_coke_cost, 1.00)
+        self.assertEqual(get_chip_cost, 0.50)
 
 
     @mock.patch('application.main.display_product_cost', return_value = "Fake Chips")
