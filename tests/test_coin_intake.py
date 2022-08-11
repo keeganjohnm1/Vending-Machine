@@ -7,10 +7,6 @@ class Test(unittest.TestCase):
     def test_users_invalid_current_count(self, mock_current_count):
         expected_invalid_count = 1
         actual_invalid_count = coin_intake.users_current_count()
-        #user selects item
-        ##user is directed to input coin
-        #user inputs coins until item is paid for
-        ##item cost needs to be mapped from product_config
         self.assertEqual(expected_invalid_count, actual_invalid_count)
 
 
@@ -18,10 +14,6 @@ class Test(unittest.TestCase):
     def test_users_valid_current_count(self, mock_current_count):
         expected_valid_count = 5
         actual_valid_count = coin_intake.users_current_count()
-        # user selects item
-        ##user is directed to input coin
-        # user inputs coins until item is paid for
-        ##item cost needs to be mapped from product_config
         self.assertEqual(expected_valid_count, actual_valid_count)
 
     def test_user_selects_product(self):
