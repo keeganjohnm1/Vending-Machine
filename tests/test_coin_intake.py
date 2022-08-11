@@ -17,8 +17,8 @@ class Test(unittest.TestCase):
         self.assertEqual(expected_valid_count, actual_valid_count)
 
     def test_user_selects_product(self):
-        item_selected = "Cola"
+        item_selected = 1 #Cola
         users_total_count = 1.00
-        expected_coin_return = 0
+        expected_coin_return = 0.0
         actual_coin_return = coin_intake.get_customer_selection(users_total_count, item_selected)
-        self.assertEqual(expected_coin_return, actual_coin_return)
+        self.assertEqual(expected_coin_return, actual_coin_return['customer_final_total'])

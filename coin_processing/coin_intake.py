@@ -16,7 +16,7 @@ def get_customer_selection(customer_total, product_selected):
         2 : "Chips",
         3 : "Candy"
     }
-    map_selected_product = map_num_selected_to_product.get(int(product_selected))
+    map_selected_product = map_num_selected_to_product.get(product_selected)
     product_cost = round(product_config.products_available.get(map_selected_product), 2)
     if customer_total >= product_cost:
         print("THANK YOU")
