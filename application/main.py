@@ -26,8 +26,7 @@ def display_product_cost():
         else:
             return customer_input
 def user_selection_response():
-    users_selection = display_product_cost()
-    coin_intake.users_current_count(users_selection)
+    coin_intake.users_current_count()
     print("THANK YOU")
 
 # def user_selects_item(user_input):

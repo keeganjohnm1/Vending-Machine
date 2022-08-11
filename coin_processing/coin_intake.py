@@ -1,44 +1,48 @@
-from config import coin_config
-
-# def implement_count_dict():
-#     customer_count_dict = {}
-#     for item in coin_config.coins_available:
-#         customer_count_dict[item] = 0
-#     return customer_count_dict
+from config import coin_config, product_config
+from application import main
 
 
-def users_current_count(product_selected):
-    valid_curr_count = 0
-    invalid_curr_count = 0
+
+
+def get_customer_selection(customer_total, product_selected):
+    product_cost = product_config.products_available.get(product_selected)
+    if customer_total >= product_cost:
+        customer_total = customer_total - product_cost
+    elif customer_total < product_cost:
+        print('INSERT COINS')
+    return customer_total
+def handle_users_selection(total):
+    users_product_selection = main.user_selection_response()
+    return get_customer_selection(total, users_product_selection)
+
+def users_current_count():
     curr_count_dict = {
         "valid": 0,
         "invalid": 0
     }
-    valid_curr_count
-    product_dispensed = False
-    while not product_dispensed:
-        if product_selected:
+    product_selected = False
+    while not product_selected:
+        if curr_count_dict['valid'] == 0:
             print("INSERT COINS")
         customer_input = input(
             "Please enter your coin choice from options below: \n\t"
-            "1: Penny\n\t"
-            "5: Nickel\n\t"
-            "10: Dime \n\t"
-            "25: Quarter\n\t"
+            "Penny\n\t"
+            "Nickel\n\t"
+            "Dime \n\t"
+            "Quarter\n\t"
         )
         customer_input.lower()
-        # curr_count = implement_count_dict()
+        if customer_input not in coin_config.coins_available:
+            print("Please enter insert valid coin")
         if len(customer_input) == 5:
-            invalid_curr_count += coin_config.coins_available.get(customer_input)
-            curr_count_dict['invalid'] = invalid_curr_count
+            curr_count_dict['invalid'] = coin_config.coins_available.get(customer_input)
         if len(customer_input) == 6:
-            valid_curr_count += coin_config.coins_available.get(customer_input)
-            curr_count_dict['valid'] +=valid_curr_count
+            curr_count_dict['valid'] += coin_config.coins_available.get(customer_input)
         if len(customer_input) == 4:
-            valid_curr_count += coin_config.coins_available.get(customer_input)
-            curr_count_dict['valid'] +=valid_curr_count
+            curr_count_dict['valid'] += coin_config.coins_available.get(customer_input)
         if len(customer_input) == 7:
-            valid_curr_count += coin_config.coins_available.get(customer_input)
-            curr_count_dict['valid'] +=valid_curr_count
-        #keep track of valid count and invalid count
+            curr_count_dict['valid'] += coin_config.coins_available.get(customer_input)
+        customers_total = handle_users_selection(curr_count_dict['valid'])
+        print("Coin total: ", customers_total)
+        print("Amount in coin return:", curr_count_dict['invalid'])
     return curr_count_dict
