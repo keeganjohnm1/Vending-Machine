@@ -1,5 +1,5 @@
 from config import coin_config, product_config
-from application import main
+import main
 
 curr_count_dict = {
     "valid": 0,

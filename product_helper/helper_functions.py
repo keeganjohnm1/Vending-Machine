@@ -1,5 +1,6 @@
 from config import product_config
 from coin_processing import coin_intake
+
 def sum_helper(arg):
     total = 0
     for val in arg:
@@ -28,10 +29,3 @@ def display_product_cost():
 def user_selection_response():
     coin_intake.users_current_count()
     print("THANK YOU")
-
-# def user_selects_item(user_input):
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    user_selection_response()
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
