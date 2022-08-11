@@ -1,5 +1,4 @@
 # Vending-Machine
-building a vending machine using TDD
 
 This project can be ran from the terminal and the user will need to have python3 and poetry installed.
 
